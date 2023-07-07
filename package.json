@@ -1,0 +1,24 @@
+{
+  "name": "goit-nodejs-hw-olekspm",
+  "version": "1.0.0",
+  "description": "GoIT Node.js homework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OleksandrPM/goit-nodejs-hw-olekspm.git"
+  },
+  "author": "OleksPM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OleksandrPM/goit-nodejs-hw-olekspm/issues"
+  },
+  "homepage": "https://github.com/OleksandrPM/goit-nodejs-hw-olekspm#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
