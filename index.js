@@ -1,3 +1,6 @@
-const now = new Date();
-
-console.log(`Today is ${now.getFullYear()} year.`);
+import {
+  addContact,
+  getContactById,
+  listContacts,
+  removeContact,
+} from "./contacts.js";
