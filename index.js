@@ -1,10 +1,10 @@
-import yargs from "yargs";
-import {
+const yargs = require("yargs");
+const {
   addContact,
   getContactById,
   listContacts,
   removeContact,
-} from "./contacts.js";
+} = require("./contacts");
 
 const { argv } = yargs(process.argv.slice(2));
 

@@ -1,13 +1,15 @@
-import fs from "fs/promises";
-import path from "path";
-import { nanoid } from "nanoid";
+const fs = require("fs/promises");
+const path = require("path");
+const { nanoid } = require("nanoid");
 
-export default { listContacts, getContactById, removeContact, addContact };
+module.exports = { listContacts, getContactById, removeContact, addContact };
+
+// export default { listContacts, getContactById, removeContact, addContact };
 
 const contactsPath = path.resolve("db", "contacts.json");
 
 // Повертає масив контактів.
-export async function listContacts() {
+async function listContacts() {
   try {
     const data = await fs.readFile(contactsPath);
     return JSON.parse(data);
@@ -17,7 +19,7 @@ export async function listContacts() {
 }
 
 // Повертає об'єкт контакту з таким id. Повертає null, якщо контакт з таким id не знайдений.
-export async function getContactById(contactId) {
+async function getContactById(contactId) {
   try {
     const contacts = await listContacts();
     const contact = contacts.find((contact) => contact.id === contactId);
@@ -28,7 +30,7 @@ export async function getContactById(contactId) {
 }
 
 // Повертає об'єкт видаленого контакту. Повертає null, якщо контакт з таким id не знайдений.
-export async function removeContact(contactId) {
+async function removeContact(contactId) {
   try {
     const contacts = await listContacts();
     const index = contacts.findIndex(({ id }) => id === contactId);
@@ -46,7 +48,7 @@ export async function removeContact(contactId) {
 
 // Повертає об'єкт доданого контакту.
 // Зациклює при роботі із json в режимі dev без перевірки наявності контакту
-export async function addContact(name, email, phone) {
+async function addContact(name, email, phone) {
   try {
     const contacts = await listContacts();
     const newContact = { id: nanoid(), name, email, phone };
